@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 //connect to mlab database
 //make sure to replace my db string & cards with your own
-mongoose.connect('mongodb://test:test123@ds247439.mlab.com:47439/gql-ninja');
+mongoose.connect('mongodb://localhost/graphql');
 mongoose.connection.once('open', () => {
   console.log('connected to database');
 });
