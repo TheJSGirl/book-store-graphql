@@ -6,7 +6,7 @@ const {
   GraphQLSchema,
   GraphQLInt,
   GraphQLList,
-  GraphQLID,
+  GraphQLID
 } = graphql;
 
 const books = [
@@ -65,6 +65,12 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         //to get data from db or other source
         return books.find(el => el.id === args.id);
+      }
+    },
+    books: {
+      type: GraphQLList(BookType),
+      resolve(parent, args) {
+        return books;
       }
     },
     author: {
