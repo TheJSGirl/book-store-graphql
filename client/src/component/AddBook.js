@@ -1,16 +1,6 @@
 import React, { Component } from 'react';
-import { gql } from 'apollo-boost';
 import { graphql } from 'react-apollo';
-
-const getAuthorsQuery = gql`
-  {
-    authors {
-      name
-      id
-      age
-    }
-  }
-`;
+import { getAuthorsQuery } from '../queries';
 class AddBook extends Component {
   displayAuthor() {
     const data = this.props.data;
